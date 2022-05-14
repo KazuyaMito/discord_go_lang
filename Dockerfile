@@ -1,5 +1,5 @@
-FROM golang:1.18.2-alpine3.15
-RUN apk update && apk add git
+FROM golang:latest
 RUN mkdir /go/src/app
 WORKDIR /go/src/app
-ADD . /go/src/app
+ADD ./app /go/src/app
+RUN go build
